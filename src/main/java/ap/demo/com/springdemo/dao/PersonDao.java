@@ -3,6 +3,8 @@ package ap.demo.com.springdemo.dao;
 import ap.demo.com.springdemo.model.Person;
 
 import java.util.UUID;
+import java.util.List;
+import java.util.Optional;
 
 public interface PersonDao {
 	int insertPerson(UUID id, Person person);
@@ -11,4 +13,9 @@ public interface PersonDao {
 		UUID id = UUID.randomUUID();
 		return insertPerson(id, person);
 	}
+
+        List<Person> getAllPerson();
+        Optional<Person> getPersonById(UUID id);
+        int deletePerson(UUID id);
+        int updatePerson(UUID id, Person person);
 }
